@@ -18,6 +18,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BaseClass {
@@ -35,11 +36,14 @@ public class BaseClass {
 		
 		logger = Logger.getLogger("NetBanking");
 		PropertyConfigurator.configure("log4j.properties");
-
+		
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-features=VizDisplayCompositor");
+		
 		if (Browsr.equals("Chrome")) {
 			
 		 System.setProperty("webdriver.chrome.driver",oreadconfig.getchromePath());
-		 driver = new ChromeDriver();
+		 driver = new ChromeDriver(options);
 
 		} else if (Browsr.equals("Firefox")) {
 			
