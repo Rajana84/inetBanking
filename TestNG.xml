@@ -1,0 +1,16 @@
+<suite name="inetBanking">
+
+	<listeners> -->
+		<listener class-name="com.inetBanking.Utilities.ExtentReportClass"/> -->
+	</listeners> 
+
+	<test name="Guru99 Banking">
+		<parameter name="browser" value="Chrome" />
+		<classes>
+		<class name="com.inetBanking.Test.Login_TC001" />  
+<!--    	<class name="com.inetBanking.Test.Login_DD001" />   -->
+<!--   		<class name="com.inetBanking.Test.AddCustomer_TC002"/> -->
+		</classes>
+	</test>
+
+</suite>
